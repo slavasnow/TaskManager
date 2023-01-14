@@ -1,14 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scens/Task.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/AddTaskBtn.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/main.gd" type="Script" id=2]
 
-[node name="main" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_vertical_guides_": [ 9.0, 390.0 ]
-}
+[node name="main" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="TextTimer" type="Label" parent="."]
 margin_left = 128.0
@@ -36,23 +32,24 @@ margin_left = 14.0
 margin_top = 144.0
 margin_right = 315.0
 margin_bottom = 184.0
+caret_blink = true
+caret_blink_speed = 0.5
 
 [node name="AddTaskBtn" type="Button" parent="."]
-margin_left = 327.0
-margin_top = 146.0
-margin_right = 385.0
+margin_left = 321.0
+margin_top = 144.0
+margin_right = 381.0
 margin_bottom = 183.0
 text = "Add"
-script = ExtResource( 2 )
 
 [node name="TaskContainer" type="VBoxContainer" parent="."]
-margin_left = 11.0
-margin_top = 198.0
-margin_right = 390.0
-margin_bottom = 598.0
+margin_left = 10.0
+margin_top = 196.0
+margin_right = 389.0
+margin_bottom = 596.0
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="Task" parent="TaskContainer" instance=ExtResource( 1 )]
 
-[connection signal="pressed" from="AddTaskBtn" to="AddTaskBtn" method="_on_AddTaskBtn_pressed"]
+[connection signal="pressed" from="AddTaskBtn" to="." method="_on_AddTaskBtn_pressed"]
