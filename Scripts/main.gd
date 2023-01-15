@@ -1,22 +1,7 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_AddTaskBtn_pressed():
+func _create_new_task():
 	var _text = $TextTask.text
 	var task = preload("res://Scens/Task.tscn").instance()
 
@@ -25,4 +10,24 @@ func _on_AddTaskBtn_pressed():
 
 	$TextTask.text = ""
 
-	pass # Replace with function body.
+# Управаление с помощью клавиш
+func _get_input():
+	# Добавление таска
+	if Input.is_action_just_pressed("ui_accept"):
+		_on_AddTaskBtn_pressed()
+
+	
+# Called when the node enters the scene tree for the first time.
+#func _ready():	
+#	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	_get_input()
+#	pass
+
+func _on_AddTaskBtn_pressed():
+	_create_new_task()
+
+	#pass # Replace with function body.
