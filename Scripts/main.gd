@@ -4,19 +4,20 @@ extends Node2D
 var _maxCountTask = 14
 var _countTask = 0
 var _enableAdd = true
-
+var task
 #добавление таска 
 func _create_new_task():
 	var _text = $TextTask.text
-	var task = preload("res://Scens/Task.tscn").instance()
+	task = preload("res://Scens/Task.tscn").instance()#
+	
 
 	task.get_node("Label").text = _text
-	get_node("TaskContainer").add_child(task)
+	get_node("TasksContainer").add_child(task)
+	task.get_node("ControlNode").connect("counted", self, "_counted")
 
 	$TextTask.text = ""
 	_countTask += 1
 	#
-	print(_countTask)
 
 #проверка на кол-во тасков
 func _check_max_count(check):
@@ -35,7 +36,10 @@ func _get_input():
 	if Input.is_action_just_pressed("ui_accept") and _enableAdd == true:
 		_on_AddTaskBtn_pressed()
 
-	
+#событие удаления таска
+func _counted():
+	_countTask -= 1	
+
 # Called when the node enters the scene tree for the first time.
 #func _ready():	
 #	pass # Replace with function body.
@@ -45,6 +49,8 @@ func _get_input():
 func _process(delta):
 	
 	_get_input()
+
+	
 
 	#постоянная проверка на максимальное кол-во тасков
 	if _countTask == _maxCountTask:
