@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Task.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Roboto-BoldItalic.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
 
 [node name="TaskContaliner" type="HBoxContainer"]
 margin_right = 379.0
@@ -11,18 +18,20 @@ script = ExtResource( 1 )
 
 [node name="CheckBox" type="CheckBox" parent="."]
 margin_right = 24.0
-margin_bottom = 24.0
+margin_bottom = 25.0
 
 [node name="Label" type="Label" parent="."]
 margin_left = 28.0
-margin_top = 5.0
+margin_top = 3.0
 margin_right = 28.0
-margin_bottom = 19.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 1 )
 
 [node name="Delete" type="Button" parent="."]
 margin_left = 32.0
 margin_right = 87.0
-margin_bottom = 24.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
 text = "Delete"
 
 [connection signal="pressed" from="Delete" to="ControlNode" method="_on_Delete_pressed"]

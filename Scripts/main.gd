@@ -1,10 +1,12 @@
 extends Node2D
 
 # переменные для отслеживания тасков
-var _maxCountTask = 14
-var _countTask = 0
-var _enableAdd = true
-var task
+
+var _maxCountTask = 14 # константа кол-во тасков 
+var _countTask = 0  # счетчик тасков
+var _enableAdd = true # 
+var task # переменная для инстанса таска
+
 #добавление таска 
 func _create_new_task():
 	var _text = $TextTask.text
