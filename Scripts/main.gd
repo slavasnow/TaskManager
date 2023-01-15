@@ -1,10 +1,9 @@
 extends Node2D
 
 # переменные для отслеживания тасков
-
 var _maxCountTask = 14 # константа кол-во тасков 
 var _countTask = 0  # счетчик тасков
-var _enableAdd = true # 
+var _enableAdd = true # проверка соответвия 
 var task # переменная для инстанса таска
 
 #добавление таска 
