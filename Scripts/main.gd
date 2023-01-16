@@ -1,7 +1,7 @@
 extends Node2D
 
 # переменные для отслеживания тасков
-var _maxCountTask = 14 # константа кол-во тасков 
+const MAX_TASKS = 14 # константа кол-во тасков 
 var _countTask = 0  # счетчик тасков
 var _enableAdd = true # проверка соответвия 
 var task # переменная для инстанса таска
@@ -54,7 +54,7 @@ func _process(delta):
 	
 
 	#постоянная проверка на максимальное кол-во тасков
-	if _countTask == _maxCountTask:
+	if _countTask == MAX_TASKS:
 		_check_max_count(true)
 	else:
 		_check_max_count(false)
