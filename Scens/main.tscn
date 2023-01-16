@@ -51,7 +51,7 @@ margin_top = 144.0
 margin_right = 315.0
 margin_bottom = 184.0
 custom_fonts/font = SubResource( 4 )
-max_length = 40
+max_length = 35
 caret_blink = true
 caret_blink_speed = 0.5
 
@@ -61,7 +61,7 @@ margin_top = 144.0
 margin_right = 381.0
 margin_bottom = 183.0
 custom_fonts/font = SubResource( 5 )
-text = "Add"
+text = "+"
 
 [node name="TasksContainer" type="VBoxContainer" parent="."]
 margin_left = 10.0

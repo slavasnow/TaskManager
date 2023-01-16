@@ -29,9 +29,9 @@ custom_fonts/font = SubResource( 1 )
 
 [node name="Delete" type="Button" parent="."]
 margin_left = 32.0
-margin_right = 87.0
+margin_right = 50.0
 margin_bottom = 25.0
 custom_fonts/font = SubResource( 2 )
-text = "Delete"
+text = "-"
 
 [connection signal="pressed" from="Delete" to="ControlNode" method="_on_Delete_pressed"]
